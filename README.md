@@ -1,2 +1,2 @@
-# Bachat.AI
-AI powered solution to suggest best value for money products in Ecommerce, Travel, Food, Grocery, Insurance, Mutual finds, Bonds, and other catergories 
+# KrezaloLandingPage
+AI powered embedded commerce solution for sellers to increase sales and user facing startups to earn affiliate commission with a simple plug and play
