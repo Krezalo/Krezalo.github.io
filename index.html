@@ -125,21 +125,48 @@
                         class="tw-relative tw-max-w-[80%] tw-overflow-hidden tw-rounded-xl tw-bg-transparent max-md:tw-max-w-full"
                         id="dashboard"
                     >
-                        <iframe
-                            src="https://www.youtube.com/embed/7e2HsgysSnI"
-                            title="YouTube video"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                            class="tw-object-cover tw-opacity-90 max-lg:tw-object-contain"
+                        <!-- Thumbnail Image (Initially Visible) -->
+                        <div
+                            class="tw-relative tw-w-[1200px] tw-h-[800px] tw-cursor-pointer"
+                            onclick="playVideo()"
+                            id="video-thumbnail"
+                        >
+                            <img 
+                                src="https://raw.githubusercontent.com/krezalo/krezalo.github.io/main/thumbnail.png" 
+                                alt="Video Thumbnail"
+                                class="tw-object-cover tw-w-full tw-h-full tw-rounded-xl"
+                            >
+                            <!-- Play Button Overlay -->
+                            <div 
+                                class="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center tw-bg-black/50 tw-rounded-xl"
+                            >
+                                <svg class="tw-w-20 tw-h-20 tw-text-white" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                
+                        <!-- Self-Hosted Video (Initially Hidden) -->
+                        <video 
+                            id="self-hosted-video"
+                            class="tw-hidden tw-object-cover tw-opacity-90 max-lg:tw-object-contain"
                             style="width:1200px; height: 800px;"
-                        ></iframe>
+                            controls
+                        >
+                            <source src="https://raw.githubusercontent.com/krezalo/krezalo.github.io/main/demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-
-                    <div
-                        class="hero-img-bg-grad tw-absolute tw-left-[20%] tw-top-5 tw-h-[200px] tw-w-[200px]"
-                    ></div>
                 </div>
+            
+            <script>
+                function playVideo() {
+                    document.getElementById('video-thumbnail').style.display = 'none';
+                    let video = document.getElementById('self-hosted-video');
+                    video.classList.remove('tw-hidden');
+                    video.play();
+                }
+            </script>            
             </div>
         </section>
 
